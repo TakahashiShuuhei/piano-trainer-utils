@@ -1,0 +1,34 @@
+{
+  "title": "Test Song (小節 1-1)",
+  "bpm": 120,
+  "notes": [
+    {
+      "pitch": 60,
+      "timing": {
+        "beat": 0.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 62,
+      "timing": {
+        "beat": 1.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 64,
+      "timing": {
+        "beat": 2.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 65,
+      "timing": {
+        "beat": 3.0,
+        "duration": 1.0
+      }
+    }
+  ]
+}

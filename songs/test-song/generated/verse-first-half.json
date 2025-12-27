@@ -1,0 +1,20 @@
+{
+  "title": "Test Song (beat 4.0-6.0)",
+  "bpm": 120,
+  "notes": [
+    {
+      "pitch": 67,
+      "timing": {
+        "beat": 0.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 69,
+      "timing": {
+        "beat": 1.0,
+        "duration": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "title": "Test Song (小節 2-3)",
+  "bpm": 120,
+  "notes": [
+    {
+      "pitch": 67,
+      "timing": {
+        "beat": 0.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 69,
+      "timing": {
+        "beat": 1.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 71,
+      "timing": {
+        "beat": 2.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 72,
+      "timing": {
+        "beat": 3.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 72,
+      "timing": {
+        "beat": 4.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 71,
+      "timing": {
+        "beat": 5.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 69,
+      "timing": {
+        "beat": 6.0,
+        "duration": 1.0
+      }
+    },
+    {
+      "pitch": 67,
+      "timing": {
+        "beat": 7.0,
+        "duration": 1.0
+      }
+    }
+  ]
+}
