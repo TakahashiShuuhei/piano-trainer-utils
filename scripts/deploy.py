@@ -304,10 +304,9 @@ def commit_and_push(branch: str, title: str, song_dir: Path) -> None:
     """生成ファイルをコミット＆プッシュ"""
     print("\nCommitting and pushing...")
 
-    # git add
-    generated_dir = song_dir / 'generated'
+    # git add (song_dir全体)
     run_command(
-        ['git', 'add', str(generated_dir)],
+        ['git', 'add', str(song_dir)],
         "git add に失敗"
     )
 
