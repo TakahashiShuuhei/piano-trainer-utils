@@ -1,5 +1,5 @@
 {
-  "title": "Untitled (beat 0.0-26.0)",
+  "title": "Untitled (beat 0.0-30.0)",
   "bpm": 120,
   "notes": [
     {
@@ -534,6 +534,85 @@
       "pitch": 55,
       "timing": {
         "beat": 25.5,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 43,
+      "timing": {
+        "beat": 26.0,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 46,
+      "timing": {
+        "beat": 26.5,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 43,
+      "timing": {
+        "beat": 27.0,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 47,
+      "timing": {
+        "beat": 27.0,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 48,
+      "timing": {
+        "beat": 27.5,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 43,
+      "timing": {
+        "beat": 28.0,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 49,
+      "timing": {
+        "beat": 28.5,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 43,
+      "timing": {
+        "beat": 29.0,
+        "duration": 0.5
+      },
+      "hand": "left"
+    },
+    {
+      "pitch": 31,
+      "timing": {
+        "beat": 29.5,
+        "duration": 4.0
+      }
+    },
+    {
+      "pitch": 50,
+      "timing": {
+        "beat": 29.5,
         "duration": 0.5
       },
       "hand": "left"
