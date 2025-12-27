@@ -1,7 +1,7 @@
 # Test Song
 
 - **BPM**: 120
-- **Source**: [full.json](source/full.json)
+- **Source**: [full.json](../source/full.json)
 
 ## Sections
 
