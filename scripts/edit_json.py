@@ -263,6 +263,7 @@ def main():
 
     parser.add_argument('input', help='入力JSONファイル')
     parser.add_argument('-o', '--output', required=True, help='出力JSONファイル')
+    parser.add_argument('--bpm', type=int, help='BPMを上書き（指定しない場合は入力ファイルのBPMを使用）')
 
     # 小節抽出オプション
     measure_group = parser.add_argument_group('小節抽出')
@@ -316,6 +317,10 @@ def main():
         # エディタを作成
         editor = SongEditor(song_data)
         result = song_data
+
+        # BPMの上書き（指定されている場合）
+        if args.bpm is not None:
+            editor.bpm = args.bpm
 
         # 小節抽出
         if args.measures:

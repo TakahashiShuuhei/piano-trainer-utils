@@ -216,6 +216,9 @@ def generate_section_json(
 
     cmd = ['python', EDIT_JSON_SCRIPT, str(source_file), '-o', str(output_file)]
 
+    # BPMを追加
+    cmd.extend(['--bpm', str(config['bpm'])])
+
     # measures または beats を追加
     if 'measures' in section:
         measures = section['measures']
