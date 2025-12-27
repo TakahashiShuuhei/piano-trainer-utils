@@ -5,4 +5,4 @@
 
 ## Sections
 
-* **intro** (beats 0-30) - [Practice](https://takahashishuuhei.github.io/apps/piano-practice/?song=https://raw.githubusercontent.com/TakahashiShuuhei/piano-trainer-utils/key-engine/songs/key-engine/generated/intro.json)
+* **intro** (beats 0-105) - [Practice](https://takahashishuuhei.github.io/apps/piano-practice/?song=https://raw.githubusercontent.com/TakahashiShuuhei/piano-trainer-utils/key-engine/songs/key-engine/generated/intro.json)

@@ -5,6 +5,6 @@ source: "source/key-engine.json"
 
 sections:
   - name: "intro"
-    beats: [0, 30]
+    beats: [0, 105]
 
 
