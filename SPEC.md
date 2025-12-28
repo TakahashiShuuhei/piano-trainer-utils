@@ -37,7 +37,8 @@ title: "曲名"
 bpm: 120
 branch: "take-five"
 source: "source/full.json"
-beats: 4  # オプション: 1小節の拍数
+beats: 4  # オプション: 2小節目以降の拍数（デフォルト: 4）
+pickup_beats: 2  # オプション: 1小節目の拍数（アウフタクト対応）
 
 sections:
   - name: "intro"
@@ -71,7 +72,8 @@ sections:
 
 ### オプションフィールド
 
-- `beats`: 1小節の拍数（数値）。指定された場合のみ`edit_json.py`に`--beats`オプションとして渡される
+- `beats`: 2小節目以降の拍数（数値、デフォルト: 4）。`edit_json.py`に`--beats`オプションとして渡される
+- `pickup_beats`: 1小節目の拍数（数値）。指定された場合、`edit_json.py`に`--pickup-beats`オプションとして渡される（アウフタクト対応）
 
 ### セクション定義
 
@@ -219,11 +221,14 @@ Committing and pushing...
 python scripts/edit_json.py <source-json> \
   --measures <start> <end> \
   --beats <beats-per-measure> \
+  [--pickup-beats <pickup-beats>] \
   --output <output-json>
 ```
 
 - `--beats` はYAMLの`beats`フィールドから取得（デフォルト: 4）
-- 例: `python scripts/edit_json.py source/full.json --measures 1 4 --beats 4 --output intro.json`
+- `--pickup-beats` はYAMLの`pickup_beats`フィールドから取得（指定されている場合のみ）
+- 例1: `python scripts/edit_json.py source/full.json --measures 1 4 --beats 4 --output intro.json`
+- 例2（アウフタクト）: `python scripts/edit_json.py source/full.json --measures 1 4 --beats 4 --pickup-beats 2 --output intro.json`
 
 ### beats指定の場合
 

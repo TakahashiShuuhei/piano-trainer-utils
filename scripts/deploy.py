@@ -225,6 +225,10 @@ def generate_section_json(
         if 'beats' in config:
             cmd.extend(['--beats', str(config['beats'])])
 
+        # pickup-beats オプション（YAMLに指定があれば）
+        if 'pickup_beats' in config:
+            cmd.extend(['--pickup-beats', str(config['pickup_beats'])])
+
         range_str = f"measures {measures[0]}-{measures[1]}"
     else:
         beats = section['beats']

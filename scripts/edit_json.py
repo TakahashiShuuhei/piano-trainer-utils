@@ -27,21 +27,36 @@ class SongEditor:
         self.bpm = song_data.get("bpm", 120)
         self.notes = song_data.get("notes", [])
 
-    def extract_measures(self, start_measure: int, end_measure: int, beats_per_measure: int = 4) -> Dict:
+    def extract_measures(self, start_measure: int, end_measure: int, beats_per_measure: int = 4,
+                        pickup_beats: Optional[int] = None) -> Dict:
         """
         指定した小節範囲を抽出
 
         Args:
             start_measure: 開始小節番号（1から開始）
             end_measure: 終了小節番号（1から開始、この小節を含む）
-            beats_per_measure: 1小節の拍数（デフォルト: 4）
+            beats_per_measure: 2小節目以降の拍数（デフォルト: 4）
+            pickup_beats: 1小節目の拍数（Noneの場合はbeats_per_measureと同じ）
 
         Returns:
             抽出された楽曲データ
         """
-        # 小節番号をbeat位置に変換（1始まりを0始まりに変換）
-        start_beat = (start_measure - 1) * beats_per_measure
-        end_beat = end_measure * beats_per_measure
+        # 1小節目の拍数を決定
+        first_measure_beats = pickup_beats if pickup_beats is not None else beats_per_measure
+
+        # 開始beat位置を計算
+        if start_measure == 1:
+            start_beat = 0
+        else:
+            # 1小節目の拍数 + (start_measure - 2) * 通常の拍数
+            start_beat = first_measure_beats + (start_measure - 2) * beats_per_measure
+
+        # 終了beat位置を計算
+        if end_measure == 1:
+            end_beat = first_measure_beats
+        else:
+            # 1小節目の拍数 + (end_measure - 1) * 通常の拍数
+            end_beat = first_measure_beats + (end_measure - 1) * beats_per_measure
 
         return self._extract_beats(start_beat, end_beat, f"小節 {start_measure}-{end_measure}")
 
@@ -217,6 +232,9 @@ def main():
   # 3-8小節を抽出（1小節=3拍）
   python edit_json.py input.json -o output.json --measures 3 8 --beats 3
 
+  # 1-4小節を抽出（1小節目が2拍、2小節目以降が4拍のアウフタクト）
+  python edit_json.py input.json -o output.json --measures 1 4 --pickup-beats 2 --beats 4
+
   # beat 8.0から16.0までを抽出
   python edit_json.py input.json -o output.json --beat-range 8.0 16.0
 
@@ -251,7 +269,9 @@ def main():
     measure_group.add_argument('--measures', nargs=2, type=int, metavar=('START', 'END'),
                                help='抽出する小節範囲（開始 終了）。小節番号は1から開始')
     measure_group.add_argument('--beats', type=int, default=4,
-                               help='1小節の拍数（デフォルト: 4）')
+                               help='2小節目以降の拍数（デフォルト: 4）')
+    measure_group.add_argument('--pickup-beats', type=int,
+                               help='1小節目の拍数（アウフタクト対応）。指定しない場合は--beatsと同じ')
 
     # beat抽出オプション
     beat_group = parser.add_argument_group('beat抽出')
@@ -300,8 +320,11 @@ def main():
         # 小節抽出
         if args.measures:
             start, end = args.measures
-            print(f"小節 {start}-{end} を抽出中（{args.beats}拍/小節）...")
-            result = editor.extract_measures(start, end, args.beats)
+            if args.pickup_beats is not None:
+                print(f"小節 {start}-{end} を抽出中（1小節目: {args.pickup_beats}拍, 2小節目以降: {args.beats}拍）...")
+            else:
+                print(f"小節 {start}-{end} を抽出中（{args.beats}拍/小節）...")
+            result = editor.extract_measures(start, end, args.beats, args.pickup_beats)
             editor = SongEditor(result)  # 結果を新しいエディタに
 
         # beat抽出
