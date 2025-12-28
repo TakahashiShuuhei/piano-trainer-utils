@@ -1,5 +1,5 @@
 {
-  "title": "Untitled (beat 0.0-105.0)",
+  "title": "Untitled (小節 1-26)",
   "bpm": 240,
   "notes": [
     {
@@ -2411,27 +2411,6 @@
       "pitch": 55,
       "timing": {
         "beat": 103.5,
-        "duration": 0.5
-      }
-    },
-    {
-      "pitch": 48,
-      "timing": {
-        "beat": 104.0,
-        "duration": 0.5
-      }
-    },
-    {
-      "pitch": 55,
-      "timing": {
-        "beat": 104.0,
-        "duration": 0.5
-      }
-    },
-    {
-      "pitch": 46,
-      "timing": {
-        "beat": 104.5,
         "duration": 0.5
       }
     }

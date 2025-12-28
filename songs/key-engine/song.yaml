@@ -2,9 +2,10 @@ title: "Key Engine"
 bpm: 240
 branch: "key-engine"
 source: "source/key-engine.json"
+pickup-beats: 1
 
 sections:
   - name: "intro"
-    beats: [0, 105]
+    measures: [1, 26]
 
 
