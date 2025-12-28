@@ -7,9 +7,9 @@ pickup-beats: 1
 sections:
   - name: "intro"
     measures: [1, 26]
-  - name: "sect a"
+  - name: "sect-a"
     measures: [27, 47]
-  - name: "sect b"
+  - name: "sect-b"
     measures: [47, 73]
-  - name: "sect c"
+  - name: "sect-c"
     measures: [73, 97]
