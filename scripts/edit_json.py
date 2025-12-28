@@ -264,6 +264,7 @@ def main():
     parser.add_argument('input', help='入力JSONファイル')
     parser.add_argument('-o', '--output', required=True, help='出力JSONファイル')
     parser.add_argument('--bpm', type=int, help='BPMを上書き（指定しない場合は入力ファイルのBPMを使用）')
+    parser.add_argument('--title', type=str, help='タイトルを上書き（指定しない場合は入力ファイルのタイトルを使用）')
 
     # 小節抽出オプション
     measure_group = parser.add_argument_group('小節抽出')
@@ -321,6 +322,10 @@ def main():
         # BPMの上書き（指定されている場合）
         if args.bpm is not None:
             editor.bpm = args.bpm
+
+        # タイトルの上書き（指定されている場合）
+        if args.title is not None:
+            editor.title = args.title
 
         # 小節抽出
         if args.measures:

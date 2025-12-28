@@ -219,6 +219,12 @@ def generate_section_json(
     # BPMを追加
     cmd.extend(['--bpm', str(config['bpm'])])
 
+    # タイトルを追加（YAMLのtitle + セクションパス）
+    # section_pathは "solo-first-half" のような形式なので、ハイフンをスペースに置き換え
+    section_display = section_path.replace('-', ' ')
+    section_title = f"{config['title']} - {section_display}"
+    cmd.extend(['--title', section_title])
+
     # measures または beats を追加
     if 'measures' in section:
         measures = section['measures']

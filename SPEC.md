@@ -222,21 +222,29 @@ python scripts/edit_json.py <source-json> \
   --measures <start> <end> \
   --beats <beats-per-measure> \
   [--pickup-beats <pickup-beats>] \
+  --bpm <bpm> \
+  --title "<title>" \
   --output <output-json>
 ```
 
 - `--beats` はYAMLの`beats`フィールドから取得（デフォルト: 4）
 - `--pickup-beats` はYAMLの`pickup_beats`フィールドから取得（指定されている場合のみ）
-- 例1: `python scripts/edit_json.py source/full.json --measures 1 4 --beats 4 --output intro.json`
-- 例2（アウフタクト）: `python scripts/edit_json.py source/full.json --measures 1 4 --beats 4 --pickup-beats 2 --output intro.json`
+- `--bpm` はYAMLの`bpm`フィールドから取得
+- `--title` は `"<YAMLのtitle> - <セクションパス>"` の形式で生成（例: "Take Five - solo first half"）
+- 例1: `python scripts/edit_json.py source/full.json --measures 1 4 --beats 4 --bpm 120 --title "Take Five - intro" --output intro.json`
+- 例2（アウフタクト）: `python scripts/edit_json.py source/full.json --measures 1 4 --beats 4 --pickup-beats 2 --bpm 120 --title "Take Five - intro" --output intro.json`
 
 ### beats指定の場合
 
 ```bash
 python scripts/edit_json.py <source-json> \
   --beat-range <start> <end> \
+  --bpm <bpm> \
+  --title "<title>" \
   --output <output-json>
 ```
 
 - `--beats` オプションは不要
-- 例: `python scripts/edit_json.py source/full.json --beat-range 48.0 64.0 --output bridge.json`
+- `--bpm` はYAMLの`bpm`フィールドから取得
+- `--title` は `"<YAMLのtitle> - <セクションパス>"` の形式で生成
+- 例: `python scripts/edit_json.py source/full.json --beat-range 48.0 64.0 --bpm 120 --title "Take Five - bridge" --output bridge.json`
